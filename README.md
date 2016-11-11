@@ -11,10 +11,11 @@
     git
 
 ## Make It Short 
-Link to the master, specify username, password and other [parameters](https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin#SwarmPlugin-AvailableOptions):
+Run with master, username, password and other [parameters](https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin#SwarmPlugin-AvailableOptions):
 
-    $ docker run -d --link $jenkins_master_container manycoding/jenkins-slave-robotframework-firefox \
-        -username $jenkins_user -password $pass -labels "firefox_esr"
+    $ docker run -d manycoding/jenkins-slave-robotframework-firefox \
+        -username $jenkins_user -password $pass -labels "firefox_esr" \
+        -master $jenkins_master_url
 
 To run Robot Framework tests from Jenkins:
 
