@@ -19,6 +19,7 @@ RUN wget -q "https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-c
     chmod 755 /usr/share/jenkins
 
 RUN pip install -U \
+    unittest-xml-reporting \
     requests
 
 ADD xvfb-run /usr/bin/
