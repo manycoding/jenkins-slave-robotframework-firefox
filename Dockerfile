@@ -13,13 +13,12 @@ RUN apk add --update --no-cache \
 
 RUN git config --global http.sslVerify false
 
-ENV JENKINS_SWARM_VERSION 2.2
+ENV JENKINS_SWARM_VERSION 3.3
 WORKDIR /usr/share/jenkins
-RUN wget -q "https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/${JENKINS_SWARM_VERSION}/swarm-client-${JENKINS_SWARM_VERSION}-jar-with-dependencies.jar" && \
+RUN wget -q "https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/${JENKINS_SWARM_VERSION}/swarm-client-${JENKINS_SWARM_VERSION}.jar" && \
     chmod 755 /usr/share/jenkins
 
 RUN pip install -U \
-    unittest-xml-reporting \
     requests
 
 ADD xvfb-run /usr/bin/
